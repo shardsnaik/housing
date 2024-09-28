@@ -20,6 +20,11 @@ shardsnaik
 to add or push file in github
 git add filname
 
+--> to add all coresponding files
+git add .
+
+git commit -m "Comments" 
+
 to check status 
 git status
 
