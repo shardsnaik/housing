@@ -22,7 +22,7 @@ jobs:
 
     # Step 3: Install frontend dependencies and build React app
     - name: Install dependencies and build React app
-      working-directory: ./housing/houseing  # Specify the React app folder
+      working-directory: housing/frontend  # Specify the React app folder
       run: |
         npm install
         npm run build
@@ -35,7 +35,7 @@ jobs:
 
     # Step 5: Install backend dependencies (Flask, etc.)
     - name: Install backend dependencies
-      working-directory: ./housing/flask_api.py  # Specify the Flask app folder
+      working-directory: /housing/backend # Specify the Flask app folder
       run: |
         python -m venv venv
         source venv/bin/activate
