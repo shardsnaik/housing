@@ -18,7 +18,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '14'  # Specify the Node.js version for React
+        node-version: '21'  # Specify the Node.js version for React
 
     # Step 3: Install frontend dependencies and build React app
     - name: Install dependencies and build React app
