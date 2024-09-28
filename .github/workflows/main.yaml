@@ -20,9 +20,11 @@ jobs:
       with:
         node-version: '14'  # Specify the Node.js version for React
 
-    # Step 3: Install frontend dependencies and build
+    # Step 3: Install frontend dependencies and build React app
     - name: Install dependencies and build React app
-      working-directory: src/compo/homePage  # Specify the React app folder
+      # Update the working directory to the correct path of the React project
+      # Example path based on your structure
+      working-directory: ./housing/houseing/src/compo/homePage  # Adjust this to the correct path
       run: |
         npm install
         npm run build
@@ -35,7 +37,8 @@ jobs:
 
     # Step 5: Install backend dependencies (Flask, etc.)
     - name: Install backend dependencies
-      working-directory: ./housing/flask_api.py  # Specify the Flask app folder
+      # Update the working directory to the correct path of the Flask API
+      working-directory: ./housing  # Adjust the path to match the location of your flask_api.py
       run: |
         python -m venv venv
         source venv/bin/activate
