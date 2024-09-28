@@ -22,9 +22,7 @@ jobs:
 
     # Step 3: Install frontend dependencies and build React app
     - name: Install dependencies and build React app
-      # Update the working directory to the correct path of the React project
-      # Example path based on your structure
-      working-directory: ./housing/houseing/src/compo/homePage  # Adjust this to the correct path
+      working-directory: src/compo/homePage  # Specify the React app folder
       run: |
         npm install
         npm run build
