@@ -22,7 +22,7 @@ jobs:
 
     # Step 3: Install frontend dependencies and build
     - name: Install dependencies and build React app
-      working-directory: ./houseing/src/compo/homePage  # Adjusted to match the correct path
+      working-directory: ./houseing  # Correctly specify the React app folder
       run: |
         npm install
         npm run build
@@ -35,7 +35,7 @@ jobs:
 
     # Step 5: Install backend dependencies (Flask, etc.)
     - name: Install backend dependencies
-      working-directory: ./housing  # Adjusted to the parent directory of the Flask app
+      working-directory: ./housing  # Correctly specify the Flask app folder
       run: |
         python -m venv venv
         source venv/bin/activate
