@@ -29,8 +29,8 @@ import pickle
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
-regmodel = pickle.load(open('C:\\Users\\Public\\React-JS\\House-Pricing\\housing\\reg_model.pkl', 'rb'))
-scaler = pickle.load(open('C:\\Users\\Public\\React-JS\\House-Pricing\\housing\\scalling_data.pkl', 'rb'))
+regmodel = pickle.load(open('C:\\Users\\Public\\React-JS\\House-Pricing\\housing\\backend\\reg_model.pkl', 'rb'))
+scaler = pickle.load(open('C:\\Users\\Public\\React-JS\\House-Pricing\\housing\\backend\\scalling_data.pkl', 'rb'))
 
 @app.route('/predict', methods=['POST'])
 def predict():
