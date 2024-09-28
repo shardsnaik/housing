@@ -18,11 +18,11 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'  # Specify the Node.js version for React
+        node-version: '14'  # Specify the Node.js version for React
 
     # Step 3: Install frontend dependencies and build
     - name: Install dependencies and build React app
-      working-directory: ./your-react-app-directory  # Specify the React app folder
+      working-directory: housing\houseing\src\compo\homePage  # Specify the React app folder
       run: |
         npm install
         npm run build
