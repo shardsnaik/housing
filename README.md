@@ -29,4 +29,6 @@ to check status
 git status
 
 to upload all files in github
-git push origin mai
+git push origin main
+
+If any changes made 
