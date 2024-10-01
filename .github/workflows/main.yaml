@@ -3,7 +3,7 @@ name: Deploy to Heroku
 on:
   push:
     branches:
-      - main  # or the branch you want to deploy from
+      - main  # The branch to trigger the action
 
 jobs:
   deploy:
@@ -18,40 +18,37 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '14'  # Specify the Node.js version for React
+        node-version: '20'  # Use Node.js version 20
 
-    # Step 3: Install frontend dependencies and build React app
+    # Step 3: Install frontend dependencies and build
     - name: Install dependencies and build React app
-      working-directory: frontend/src/compo/homePage  # Specify the React app folder
+      working-directory: ./houseing  # Ensure the correct React app folder
       run: |
         npm install
         npm run build
 
-    # Step 4: Setup Python for the Flask backend
+    # Step 4: Set up Python environment for the Flask backend
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'  # Specify your Python version
+        python-version: '3.10'
 
     # Step 5: Install backend dependencies (Flask, etc.)
     - name: Install backend dependencies
-      working-directory: /  # Specify the Flask app folder
+      working-directory: ./  # Ensure you are in the correct working directory
       run: |
-        python -m venv venv
-        source venv/bin/activate
-        pip install -r requirements.txt
+        python -m venv venv  # Create the virtual environment inside the current directory
+        source ./venv/bin/activate  # Activate the virtual environment
+        pip install -r requirements.txt  # Install required dependencies
 
-    # Step 6: Install Heroku CLI
-    - name: Install Heroku CLI
-      run: curl https://cli-assets.heroku.com/install.sh | sh
-
-    # Step 7: Login to Heroku using the Heroku API key
+    # Step 6: Login to Heroku using the Heroku API key
     - name: Login to Heroku
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}  # Set the API key as a secret in GitHub
-      run: echo $HEROKU_API_KEY | heroku auth:token
+      run: |
+        echo $HEROKU_API_KEY | heroku auth:token
 
-    # Step 8: Deploy to Heroku
+    # Step 7: Deploy to Heroku
     - name: Deploy to Heroku
       run: |
         git remote add heroku https://git.heroku.com/your-heroku-app-name.git
