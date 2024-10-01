@@ -18,11 +18,11 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'  # Use Node.js version 20
+        node-version: '14'  # Use Node.js version 20
 
     # Step 3: Install frontend dependencies and build
     - name: Install dependencies and build React app
-      working-directory: ./houseing  # Ensure the correct React app folder
+      working-directory: frontend/src/compo/homePage  # Ensure the correct React app folder
       run: |
         npm install
         npm run build
@@ -35,7 +35,7 @@ jobs:
 
     # Step 5: Install backend dependencies (Flask, etc.)
     - name: Install backend dependencies
-      working-directory: ./  # Ensure you are in the correct working directory
+      working-directory: /  # Ensure you are in the correct working directory
       run: |
         python -m venv venv  # Create the virtual environment inside the current directory
         source ./venv/bin/activate  # Activate the virtual environment
