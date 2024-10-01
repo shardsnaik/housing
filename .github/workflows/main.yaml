@@ -39,7 +39,7 @@ jobs:
       run: |
         python -m venv venv
         source ./venv/bin/activate
-        pip install -r requirements.txt
+        pip install -r requirments.txt
 
     # Step 6: Install Heroku CLI
     - name: Install Heroku CLI
