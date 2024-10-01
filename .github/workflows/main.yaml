@@ -35,10 +35,10 @@ jobs:
 
     # Step 5: Install backend dependencies (Flask, etc.)
     - name: Install backend dependencies
-      working-directory: /  # Specify the Flask app folder
+      working-directory: ./  # Specify the Flask app folder
       run: |
         python -m venv venv
-        source venv/bin/activate
+        source ./venv/bin/activate
         pip install -r requirements.txt
 
     # Step 6: Install Heroku CLI
